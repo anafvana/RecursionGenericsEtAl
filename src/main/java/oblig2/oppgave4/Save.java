@@ -8,35 +8,19 @@ import java.io.*;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
-public class Save implements Serializable{
-    private LocalDateTime saveDate;
-    private String content;
+public class Save extends Object implements Serializable{
+    public LocalDateTime saveDate;
+    public String content;
 
     public Save(LocalDateTime saveDate, String content){
         this.saveDate = saveDate;
         this.content = content;
     }
 
-    public LocalDateTime getSaveDate(){
-        return saveDate;
-    }
-
-    public void setSaveDate(LocalDateTime saveDate){
-        this.saveDate = saveDate;
-    }
-
-    public String getContent(){
-        return content;
-    }
-
-    public void setContent(String content){
-        this.content = content;
-    }
-
     public void saveNow(){
         FileChooser fc = new FileChooser();
         String currentDir = Paths.get(".").toAbsolutePath().normalize().toString();
-        fc.setInitialFileName("mySave.txt");
+        fc.setInitialFileName("mySave.ser");
         fc.setInitialDirectory(new File(currentDir));
 
         File selectedFile = fc.showSaveDialog(null);

@@ -46,7 +46,8 @@ public class PrimaryController {
         th.start();
 
         Save loadedSave = task.call();
-        htmlEditor.setHtmlText(loadedSave.getContent());
+
+        htmlEditor.setHtmlText(loadedSave.content);
 
     }
 
