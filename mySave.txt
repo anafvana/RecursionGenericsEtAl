@@ -1,0 +1,2 @@
+<html><head><title>Title</title></head><body>
+<html dir="ltr"><head></head><body contenteditable="true"><p>oioio<b>ioio</b>ioio</p></body></html></body></html>
