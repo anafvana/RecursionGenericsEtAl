@@ -34,26 +34,10 @@ public class Save implements Serializable{
     }
 
     public void saveNow(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("<html>");
-        sb.append("<head>");
-        sb.append("<title>Title");
-        sb.append("</title>");
-        sb.append("</head>");
-        sb.append("<body>\n" + content);
-        sb.append("</body>");
-        sb.append("</html>");
-
         FileChooser fc = new FileChooser();
         String currentDir = Paths.get(".").toAbsolutePath().normalize().toString();
         fc.setInitialFileName("mySave.txt");
         fc.setInitialDirectory(new File(currentDir));
-
-
-        FileWriter fstream = new FileWriter("MyHtml.html");
-        BufferedWriter out = new BufferedWriter(fstream);
-        out.write(sb.toString());
-        out.close();
 
         File selectedFile = fc.showSaveDialog(null);
         try {
