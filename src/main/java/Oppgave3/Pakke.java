@@ -1,5 +1,7 @@
 package Oppgave3;
 
+// Oppgave 3.2 er Pakke programmet.
+
 public class Pakke {
 
 // Oppgave 3.1
