@@ -1,6 +1,6 @@
 package Oppgave3;
 
-// Oppgave 3.2 er Pakke programmet.
+// Oppgave 3.2 er Pakke-programmet som bruker State designmønsteret.
 
 public class Pakke {
 
