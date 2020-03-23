@@ -42,7 +42,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.1</version>
                 <configuration>
-                    <mainClass>oblig2.oppgave4.App</mainClass>
+                    <mainClass>oblig2.Oppgave4.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>
