@@ -14,7 +14,7 @@ public class DesignMønster {
 
 /*
     public static void tegnFormer(List<Shape> formListe) {
-        for (int i = 0; i < formListe.length; i++) {
+        for (int i = 0; i < formListe.size(); i++) {
             formListe[i].draw();
         }
     }
@@ -25,43 +25,27 @@ public class DesignMønster {
 // I vårt eksempel når det kommer til museklikk vil den da kunne oppdatere tegningen som blir gjort av draw() metoden.
 
 // Oppgave 3.3.4
-// Dette kan implementeres med designmønsteret Decorator. Vi må først lage en abstrakt Decorator klasse som vi kan kalle f.eks ShapeDecorator
-// som implementerer Shape. Den kan se f.eks sånn ut:
-
-/*
-abstract class ShapeDecorator implements Shape {
-    protected Shape outlinedShape;
-
-    public ShapeDecorator(Shape outlinedShape) {
-        this.outlinedShape = outlinedShape;
-    }
-
-    public void draw() {
-        outlinedShape.draw();
-    }
-}
-*/
+// Dette kan implementeres med designmønsteret Decorator. Vi må først lage en abstrakt Decorator klasse ShapeDecorator
+// som implementerer Shape. Den kan du se i klassen ShapeDecorator i denne pakken.
 
 // Etter dette lager vi en konkret klasse som extender ShapeDecorator.
 
-/*
-class BlueShapeDecorator extends ShapeDecorator {
-    public BlueShapeDecorator(Shape outlinedShape) {
-        super(outlinedShape);
-    }
+// Sånn vil oppsettet av Decorator klassene være, og så kan vi teste at de fungerer her:
 
-    @Override
-    public void draw() {
-        outlinedShape.draw();
-        setBlueBorder(outlinedShape);
-    }
+    public static void main(String[] args) {
 
-    private void setBlueBorder(Shape outlinedShape) {
-        System.out.println("Border Color: Blue");
-    }
-}
-*/
+        Shape circle = new Circle();
+        Shape blueCircle = new BlueShapeDecorator(new Circle());
 
-// Sånn vil oppsettet av Decorator klassene være
+        Shape blueRectangle = new BlueShapeDecorator(new Rectangle());
+        System.out.println("Circle with no border:");
+        circle.draw();
+
+        System.out.println("\nCircle with blue border:");
+        blueCircle.draw();
+
+        System.out.println("\nRectangle with blue border:");
+        blueRectangle.draw();
+    }
 
 }
